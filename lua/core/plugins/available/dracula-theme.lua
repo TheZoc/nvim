@@ -1,7 +1,7 @@
 return
 {
 	-- Plugin
-	'dracula/vim',
+	'Mofiqul/dracula.nvim',
 	lazy = false,
 	priority = 0xFFFF,
 
