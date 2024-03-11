@@ -13,9 +13,9 @@
 # Environment Paths in Windows
 # =============================================================================
 $Utils = @()
-$Utils +=, @("C:\Program Files\7-Zip", "7z.exe")
-$Utils +=, @("D:\Util\rg", "rg.exe")
-$Utils +=, @("D:\Util\fd", "fd.exe")
+$Utils +=, @("C:\Program Files\7-Zip", "7z.exe", "https://7-zip.org")
+$Utils +=, @("D:\Util\rg", "rg.exe", "https://github.com/BurntSushi/ripgrep")
+$Utils +=, @("D:\Util\fd", "fd.exe", "https://github.com/sharkdp/fd")
 
 # =============================================================================
 # Script execution area
@@ -117,7 +117,8 @@ ForEach($Util in $Utils)
     else
     {
         Write-Host -ForegroundColor Red -NoNewLine "invalid"
-        Write-Host -ForegroundColor DarkGray " ($($Util[0])\$($Util[1]))"       
+        Write-Host -ForegroundColor DarkCyan -NoNewLine " ($($Util[0])\$($Util[1]))"
+        Write-Host -ForegroundColor DarkGray " ($($Util[2]))" 
     }
 }
 
