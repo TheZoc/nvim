@@ -17,9 +17,11 @@ added to the system.
 
 
 # Mason Install
-While this step can be done without running `nvim` previously, it's recommended
-that `nvim` is ran at least once before this step, so you can check the Lazy
-setup status before proceeding.
+While these step can be done without running `nvim` previously, it's recommended
+that `nvim` is ran at least once before, so you can check the Lazy setup status
+before proceeding.
+
+## clangd
 
 Run:
 ```
@@ -27,3 +29,16 @@ nvim --headless -c "MasonInstall clangd" -c "qa"
 ```
 
 Alternatively, open nvim and run `:MasonInstall clangd`
+
+## python-lsp-server
+
+Run:
+```
+nvim --headless -c "PylspInstall pyls-isort python-lsp-black python-lsp-ruff"
+```
+
+Unfortunately it's not possible to use `-c "qa"` here, as it won't wait until
+all the packages are installed to quit.
+Once you get the "Successfully installed" message, press `Ctrl` + `C` to exit.
+
+Alternatively, open nvim and run `:PylspInstall pyls-isort python-lsp-black python-lsp-ruff`

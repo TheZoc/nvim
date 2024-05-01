@@ -12,6 +12,7 @@ return
 	opts = {
 		ensure_installed = {
 			"clangd",
+			"pylsp",
 		}
 	},
 
