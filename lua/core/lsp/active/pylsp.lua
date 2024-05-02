@@ -1,4 +1,7 @@
-lspconfig = require("lspconfig").pylsp.setup({
+-- Add additional capabilities supported by nvim-cmp
+local capabilities = require("cmp_nvim_lsp").default_capabilities()
+
+local lspconfig = require("lspconfig")["pylsp"].setup {
     settings = {
         pylsp = {
             plugins = {
@@ -24,4 +27,8 @@ lspconfig = require("lspconfig").pylsp.setup({
             },
         },
     },
-})
+    flags = {
+        debounce_text_changes = 200,
+    },
+    capabilities = capabilities,
+}
