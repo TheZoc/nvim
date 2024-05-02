@@ -34,11 +34,11 @@ Alternatively, open nvim and run `:MasonInstall clangd`
 
 Run:
 ```
-nvim --headless -c "PylspInstall pyls-isort python-lsp-black python-lsp-ruff"
+nvim --headless -c "PylspInstall wheel pyls-isort python-lsp-black python-lsp-ruff"
 ```
 
 Unfortunately it's not possible to use `-c "qa"` here, as it won't wait until
 all the packages are installed to quit.
 Once you get the "Successfully installed" message, press `Ctrl` + `C` to exit.
 
-Alternatively, open nvim and run `:PylspInstall pyls-isort python-lsp-black python-lsp-ruff`
+Alternatively, open nvim and run `:PylspInstall wheel pyls-isort python-lsp-black python-lsp-ruff`
