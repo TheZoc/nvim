@@ -2,10 +2,10 @@ return
 {
 	-- Plugin
 	'nvim-telescope/telescope.nvim',
-	tag = '0.1.2',
+	tag = '0.1.8',
 	dependencies = {
 		'nvim-lua/plenary.nvim',
-		{ 'nvim-telescope/telescope-fzf-native.nvim', build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
+		{ 'nvim-telescope/telescope-fzf-native.nvim', build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release -DCMAKE_POLICY_VERSION_MINIMUM=3.5 && cmake --build build --config Release' }
 	},
 
 	-- Configuration
@@ -18,5 +18,6 @@ return
 		vim.keymap.set('n', '<leader>fb', builtin.buffers, {desc = 'List open buffers'})
 		vim.keymap.set('n', '<leader>fh', builtin.help_tags, {desc = 'Help Tags'})
 		vim.keymap.set('n', '<leader><Space>', builtin.oldfiles, {desc = 'Recent Files'})
+		vim.keymap.set('n', '<leader>en', function() builtin.find_files {cwd = vim.fn.stdpath("config") } end, {desc = 'Edit NeoVim config'})
 	end
 }

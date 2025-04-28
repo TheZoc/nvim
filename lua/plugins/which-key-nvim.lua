@@ -25,18 +25,27 @@ return
         },
     },
 
+    keys = {
+        {
+            "<leader>?",
+            function()
+                require("which-key").show({ global = false })
+            end,
+            desc = "Buffer Local Keymaps (which-key)",
+        },
+    },
+
     -- Init
     init = function()
-        vim.o.timeout = true
-        vim.o.timeoutlen = 300
     end,
 
     -- Configuration
     config = function(self, opts)
         local group_mappings = {
-            ["<leader>f"] = {name = "file"},
+            { "<leader>e", group = "Neovim Config" },
+            { "<leader>f", group = "File Utils" },
         }
-        require('which-key').register(group_mappings)
+        require('which-key').add(group_mappings)
     end
 
 }
