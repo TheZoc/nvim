@@ -28,8 +28,23 @@ return
 		  nerd_font_variant = 'mono'
 		},
 
-		-- (Default) Only show the documentation popup when manually triggered
-		completion = { documentation = { auto_show = false } },
+		completion = {
+			menu = {
+				-- nvim-cmp style menu
+				draw = {
+					columns = {
+						{ "label", "label_description", gap = 1 },
+						{ "kind_icon", "kind" },
+					},
+				},
+			},
+			
+			-- Show documentation when selecting a completion item
+			documentation = {
+				auto_show = true,
+				auto_show_delay_ms = 500,
+			},
+		},
 
 		-- Default list of enabled providers defined so that you can extend it
 		-- elsewhere in your config, without redefining it, due to `opts_extend`
@@ -42,7 +57,10 @@ return
 		-- when the Rust fuzzy matcher is not available, by using `implementation = "prefer_rust"`
 		--
 		-- See the fuzzy documentation for more information
-		fuzzy = { implementation = "prefer_rust_with_warning" }
+		fuzzy = { implementation = "prefer_rust_with_warning" },
+
+		-- Experimental signature help support
+		signature = { enabled = true },
 	},
 
 	opts_extend = { "sources.default" }
