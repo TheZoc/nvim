@@ -142,7 +142,7 @@ Write-Host ""
 # Check if every path exists
 ForEach($Path in $ValidPaths)
 {
-    Write-Host -NoNewLine -ForegroundColor DarkGray "$Path"
+    Write-Host -NoNewLine -ForegroundColor DarkGray "``$Path``"
     Write-Host -NoNewLine " is"
     $Exists = Test-IsInEnvPath $Path
     if (!$Exists)
@@ -151,13 +151,18 @@ ForEach($Path in $ValidPaths)
     }
     else
     {
-        Write-Host -ForegroundColor Green -NoNewLine " already"        
+        Write-Host -ForegroundColor Green -NoNewLine " already"
     }
     Write-Host -NoNewLine " in "
-    Write-Host -ForegroundColor Yellow "Env:Path"
+    Write-Host -NoNewLine -ForegroundColor Yellow "`$Env:Path"
 
     if (!$Exists)
     {
+        Write-Host -ForegroundColor Green " -> Adding"
         Add-Path $Path
+    }
+    else
+    {
+        Write-Host
     }
 }

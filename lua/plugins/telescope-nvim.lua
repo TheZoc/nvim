@@ -2,10 +2,12 @@ return
 {
 	-- Plugin
 	'nvim-telescope/telescope.nvim',
-	tag = '0.1.8',
+	tag = 'v0.2.1',
+
+	-- Dependencies
 	dependencies = {
 		'nvim-lua/plenary.nvim',
-		{ 'nvim-telescope/telescope-fzf-native.nvim', build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release -DCMAKE_POLICY_VERSION_MINIMUM=3.5 && cmake --build build --config Release' }
+		{ 'nvim-telescope/telescope-fzf-native.nvim', build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release --target install' }
 	},
 
 	-- Configuration
