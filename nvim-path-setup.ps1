@@ -16,6 +16,8 @@ $Utils = @()
 $Utils +=, @("C:\Program Files\7-Zip", "7z.exe", "https://7-zip.org")
 $Utils +=, @("D:\Util\rg", "rg.exe", "https://github.com/BurntSushi/ripgrep")
 $Utils +=, @("D:\Util\fd", "fd.exe", "https://github.com/sharkdp/fd")
+$Utils +=, @("D:\Util\tree-sitter", "tree-sitter.exe", "https://github.com/tree-sitter/tree-sitter")
+
 
 # =============================================================================
 # Script execution area
