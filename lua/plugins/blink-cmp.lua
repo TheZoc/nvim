@@ -2,7 +2,15 @@ return
 {
 	-- Plugin
 	'saghen/blink.cmp',
+
+	-- use a release tag to download pre-built binaries
 	version = '1.*',
+
+	-- Dependencies
+	dependencies = {
+		-- provides snippets for the snippet source
+		'rafamadriz/friendly-snippets',
+	},
 
 	-- Options
 	---@module 'blink.cmp'
@@ -38,11 +46,17 @@ return
 					},
 				},
 			},
-			
+
 			-- Show documentation when selecting a completion item
 			documentation = {
 				auto_show = true,
 				auto_show_delay_ms = 500,
+			},
+
+			accept = {
+				auto_brackets = {
+					enabled = true,
+				}
 			},
 		},
 

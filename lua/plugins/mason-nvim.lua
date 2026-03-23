@@ -2,11 +2,13 @@ return
 {
 	-- mason-lspconfig bridges mason.nvim and nvim-lspconfig, so it's easier to install them together
 	-- Plugin
-	'williamboman/mason.nvim',
-	'williamboman/mason-lspconfig.nvim',
-	'neovim/nvim-lspconfig',
+	"mason-org/mason-lspconfig.nvim",
 
-	-- Opts - Make sure these are included in vim.lsp.enable()
+	dependencies = {
+		{ "mason-org/mason.nvim", opts = {} },
+		"neovim/nvim-lspconfig",
+	},
+
 	opts = {
 		ensure_installed = {
 			'clangd',
@@ -15,10 +17,4 @@ return
 			'pylsp',
 		}
 	},
-
-	-- Configuration
-	config = function(opts)
-		require('mason').setup()
-		require('mason-lspconfig').setup(opts)
-	end
 }

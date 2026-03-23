@@ -6,7 +6,7 @@ return
 	lazy = false,
 
 	-- Dependencies
-	dependencies = { "echasnovski/mini.icons" },
+	dependencies = { { "nvim-mini/mini.icons", opts = {} } },
 
 	-- Opts
 	---@module 'oil'
